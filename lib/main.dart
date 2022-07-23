@@ -1,18 +1,25 @@
+import 'package:bon_appetite/dishes_widget.dart';
 import 'package:flutter/material.dart';
 import 'home_page.dart';
 
 void main() {
-  runApp(customButtons());
+  runApp(BonAppetite());
 }
 
-class customButtons extends StatelessWidget {
-  const customButtons({Key? key}) : super(key: key);
+class BonAppetite extends StatelessWidget {
+  const BonAppetite({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: MyHomePage(),
+
+      routes: {
+        '/home_page': (context) => const MyHomePage(),
+        '/dishes_widget': (context) => Dishes(),
+      },
+      initialRoute: '/home_page',
+      // debugShowCheckedModeBanner: false,
+      // home: MyHomePage(),
     );
   }
 }

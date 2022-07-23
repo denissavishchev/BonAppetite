@@ -13,6 +13,12 @@ class Buttons extends StatefulWidget {
 
 class ButtonsState extends State<Buttons> {
 
+  void back() {
+    setState(() {
+      Navigator.of(context).pushNamed('/dishes_widget');
+    });
+  }
+
   NeumorphicStyle style = NeumorphicStyle(
       shape: NeumorphicShape.flat,
       boxShape: const NeumorphicBoxShape.circle(),
@@ -72,7 +78,7 @@ class ButtonsState extends State<Buttons> {
 
             NeumorphicButton(
               onPressed: () {
-                print('Click');
+                print('object');
               },
               style: style,
               padding: const EdgeInsets.all(2),
